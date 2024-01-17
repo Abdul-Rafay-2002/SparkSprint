@@ -1,9 +1,17 @@
 'use client';
 import { useCallback, useState } from 'react';
 import Avatar from '../Avatar';
-import { AiFillCaretDown } from 'react-icons/ai';
 import Link from 'next/link';
-const UserMenu = () => {
+import MenuItem from './MenuItem';
+import { signOut } from 'next-auth/react';
+import BackDrop from './BackDrop';
+import { SafeUser } from '@/types';
+
+interface UserMenuProps {
+	currentUser: SafeUser | null;
+}
+
+const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleOpen = useCallback(() => {
 		setIsOpen((prev) => !prev);
@@ -14,13 +22,55 @@ const UserMenu = () => {
 				<Avatar color='#fff' src={''} />
 			</div>
 			{isOpen && (
-				<div className='absolute bg-emerald-200 w-[350px] z-50  top-12 -right-20 rounded-md shadow-md shadow-emerald-400 border-2 border-emerald-200'>
-					<div className='flex justify-evenly'>
-						<Link href={'#'} className='text-black'>Login</Link>
-						<Link href={'#'} className='text-black'>register</Link>
-					</div>
+				<div className='absolute bg-[#061621] w-[300px] z-50  top-16 right-0 rounded-xl py-6  Boxshadow '>
+					{currentUser ? (
+						<div>
+							<div className='bg-black w-16 h-16 flex items-center justify-center ml-6 my-2 rounded-full mb-6 border-2 border-[#00ED64]'>
+								<Avatar color='#fff' src={''} />
+							</div>
+							<div className='flex justify-evenly flex-col'>
+								<Link
+									href='/orders'
+									className='text-white bg-slate-800 p-2 px-5 text-sm mb-2 hover:bg-[#00ED64] hover:text-black transition-colors'>
+									<MenuItem onClick={toggleOpen}>Your Orders</MenuItem>
+								</Link>
+								<Link
+									href='/admin'
+									className='text-white bg-slate-800 p-2 px-5 text-sm mb-2 hover:bg-[#00ED64] hover:text-black transition-colors'>
+									<MenuItem onClick={toggleOpen}>Admin Dashboard</MenuItem>
+								</Link>
+								<MenuItem
+									onClick={() => {
+										toggleOpen();
+										signOut();
+									}}
+									customClass='text-white bg-slate-800 border-2 border-slate-800 p-2 hover:bg-slate-950 transition-colors px-5 text-sm rounded-md w-[90px] mx-auto mt-4'>
+									Logout
+								</MenuItem>
+							</div>
+						</div>
+					) : (
+						<div>
+							<div className='bg-black w-16 h-16 flex items-center justify-center mx-auto my-2 rounded-full mb-4 border-2 border-[#00ED64]'>
+								<Avatar color='#fff' src={''} />
+							</div>
+							<div className='flex justify-evenly'>
+								<Link
+									href='/login'
+									className='ext-white bg-slate-800 border-2 border-slate-800 p-0.5 text-white hover:bg-slate-950 transition-colors px-5 text-sm rounded-md  mx-auto mt-4'>
+									<MenuItem onClick={toggleOpen}>Login</MenuItem>
+								</Link>
+								<Link
+									href='/register'
+									className='ext-white bg-slate-800 border-2 border-slate-800 p-0.5 text-white hover:bg-slate-950 transition-colors px-4 text-sm rounded-md  mx-auto mt-4'>
+									<MenuItem onClick={toggleOpen}>Register</MenuItem>
+								</Link>
+							</div>
+						</div>
+					)}
 				</div>
 			)}
+			{isOpen ? <BackDrop onClick={toggleOpen} /> : null}
 		</div>
 	);
 };

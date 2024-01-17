@@ -66,7 +66,7 @@ const RegisterForm = () => {
 			</p>
 			<Button
 				label='sign in with google'
-				custom='w-full capitalize  !rounded-full text-black hover:bg-[#00ED64]'
+				custom='w-full capitalize !rounded-full text-black hover:bg-[#00ED64]'
 				outline
 				onClick={() => {}}
 				icon={FcGoogle}

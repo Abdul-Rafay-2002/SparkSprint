@@ -11,11 +11,12 @@ export const metadata: Metadata = {
 		'Explore the future of electronics at SparkSprint your ultimate destination for cutting-edge gadgets, mobile phones, and laptops. Ignite your tech passion with a curated collection of high-performance devices. Shop now for the latest in innovation and stay ahead in the fast-paced world of technology. SparkSprint: Where Every Purchase Ignites Possibilities.',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+
 	return (
 		<html lang='en'>
 			<body className='bg-white text-gray-300'>

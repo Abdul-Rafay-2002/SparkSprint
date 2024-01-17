@@ -7,23 +7,40 @@ import { FcGoogle } from 'react-icons/fc';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import Button from '../components/Button';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 const LoginForm = () => {
 	const [isLoading, setIsLoading] = useState(false);
+	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<FieldValues>({
 		defaultValues: {
-
 			email: '',
 			password: '',
 		},
 	});
 	const onSubmit: SubmitHandler<FieldValues> = (data) => {
 		setIsLoading(true);
-		console.log(data);
+		signIn('credentials', {
+			...data,
+			redirect: false,
+		}).then((callback) => {
+			setIsLoading(false);
+
+			if (callback?.ok) {
+				router.push('/cart/');
+				router.refresh();
+				toast.success('Logged In Successfully!');
+			}
+			if (callback?.error) {
+				toast.error(callback?.error);
+			}
+		});
 	};
 	return (
 		<>
@@ -37,7 +54,7 @@ const LoginForm = () => {
 			</p>
 			<Button
 				label='Countinue with google'
-				custom='w-full capitalize  !rounded-full text-black hover:bg-[#00ED64]'
+				custom='w-full capitalize !rounded-full text-black hover:bg-[#00ED64] '
 				outline
 				onClick={() => {}}
 				icon={FcGoogle}
