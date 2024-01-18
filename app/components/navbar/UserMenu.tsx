@@ -25,10 +25,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 				<div className='absolute bg-[#061621] w-[300px] z-50  top-16 right-0 rounded-xl py-6  Boxshadow '>
 					{currentUser ? (
 						<div>
-							<div className='bg-black w-16 h-16 flex items-center justify-center ml-6 my-2 rounded-full mb-6 border-2 border-[#00ED64]'>
+							<div className='bg-black w-16 h-16 flex items-center justify-center mx-auto my-2 rounded-full mb-6 border-2 border-[#00ED64]'>
 								<Avatar color='#fff' src={''} />
 							</div>
-							<div className='flex justify-evenly flex-col'>
+							<div className='flex justify-evenly flex-col text-center'>
 								<Link
 									href='/orders'
 									className='text-white bg-slate-800 p-2 px-5 text-sm mb-2 hover:bg-[#00ED64] hover:text-black transition-colors'>

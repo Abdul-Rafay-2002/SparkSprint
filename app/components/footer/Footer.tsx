@@ -99,7 +99,7 @@ const Footer = () => {
 						<Link
 							className='text-md font-bold hover:text-[#00ED64]'
 							href='https://abdulrafayportfolio.vercel.app/'
-							target='_blank'>
+							target='_blank'>{' '}
 							Rafay Dev
 						</Link>
 					</p>
