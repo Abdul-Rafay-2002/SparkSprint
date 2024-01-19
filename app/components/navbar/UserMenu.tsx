@@ -16,6 +16,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 	const toggleOpen = useCallback(() => {
 		setIsOpen((prev) => !prev);
 	}, []);
+
 	return (
 		<div className='bg-[#ffffff1a] flex w-12 h-12 justify-center items-center rounded-full cursor-pointer '>
 			<div onClick={toggleOpen} className=''>
@@ -25,8 +26,14 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 				<div className='absolute bg-[#061621] w-[300px] z-50  top-16 right-0 rounded-xl py-6  Boxshadow '>
 					{currentUser ? (
 						<div>
-							<div className='bg-black w-16 h-16 flex items-center justify-center mx-auto my-2 rounded-full mb-6 border-2 border-[#00ED64]'>
-								<Avatar color='#fff' src={''} />
+							<div className='flex justify-between flex-col items-center mb-6'>
+								<div className='bg-black w-[65px] h-[65px] flex items-center justify-center ml-2 my-2 rounded-full  '>
+									<Avatar color='#fff' src={currentUser?.image} />
+								</div>
+								<div className='text-center'>
+									<h5>{currentUser?.name}</h5>
+									<p className='text-gray-400/75'>{currentUser?.email}</p>
+								</div>
 							</div>
 							<div className='flex justify-evenly flex-col text-center'>
 								<Link

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Heading from '../components/Heading';
 import Input from '../components/input/Input';
 import { FcGoogle } from 'react-icons/fc';
@@ -11,8 +11,13 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { SafeUser } from '@/types';
 
-const RegisterForm = () => {
+interface RegisterFormProps {
+	currentUser: SafeUser | null;
+}
+
+const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
 	const {
@@ -26,6 +31,15 @@ const RegisterForm = () => {
 			password: '',
 		},
 	});
+
+	useEffect(() => {
+		if (currentUser) {
+			router.push('/');
+			router.refresh();
+			toast.success("You're already registered..");
+		}
+	}, []);
+
 	const onSubmit: SubmitHandler<FieldValues> = (data) => {
 		setIsLoading(true);
 		axios
@@ -54,6 +68,13 @@ const RegisterForm = () => {
 				setIsLoading(false);
 			});
 	};
+	if (currentUser) {
+		return (
+			<p className='text-center text-black'>
+				Already Registered, Redirecting...
+			</p>
+		);
+	}
 	return (
 		<>
 			<Heading
@@ -65,10 +86,12 @@ const RegisterForm = () => {
 				Please signup for purchased the products!
 			</p>
 			<Button
-				label='sign in with google'
+				label='Countinue with google'
 				custom='w-full capitalize !rounded-full text-black hover:bg-[#00ED64]'
 				outline
-				onClick={() => {}}
+				onClick={() => {
+					signIn('google');
+				}}
 				icon={FcGoogle}
 			/>
 			<div className='flex items-center gap-1 w-full justify-center'>

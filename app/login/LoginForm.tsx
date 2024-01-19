@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Heading from '../components/Heading';
 import Input from '../components/input/Input';
 import { FcGoogle } from 'react-icons/fc';
@@ -10,8 +10,13 @@ import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+import { SafeUser } from '@/types';
 
-const LoginForm = () => {
+interface LoginFormProps {
+	currentUser: SafeUser | null;
+}
+
+const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
 	const {
@@ -24,6 +29,15 @@ const LoginForm = () => {
 			password: '',
 		},
 	});
+
+	useEffect(() => {
+		if(currentUser){
+			router.push('/');
+			router.refresh();
+			toast.success("You're already logged in..");
+		}
+	}, []);
+
 	const onSubmit: SubmitHandler<FieldValues> = (data) => {
 		setIsLoading(true);
 		signIn('credentials', {
@@ -42,6 +56,10 @@ const LoginForm = () => {
 			}
 		});
 	};
+
+	if (currentUser) {
+		return <p className='text-center text-black'>Logged In, Redirecting...</p>;
+	}
 	return (
 		<>
 			<Heading
@@ -56,7 +74,7 @@ const LoginForm = () => {
 				label='Countinue with google'
 				custom='w-full capitalize !rounded-full text-black hover:bg-[#00ED64] '
 				outline
-				onClick={() => {}}
+				onClick={() => {signIn('google')}}
 				icon={FcGoogle}
 			/>
 			<div className='flex items-center gap-1 w-full justify-center'>

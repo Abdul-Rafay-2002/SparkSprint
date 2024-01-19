@@ -13,8 +13,8 @@ const Avatar: React.FC<AvatarProps> = ({ src, color }) => {
 				src={src}
 				alt='Avatar'
 				className='rounded-full border-2 border-[#00ED64]'
-				height='50'
-				width='50'
+				height='65'
+				width='65'
 			/>
 		);
 	}
