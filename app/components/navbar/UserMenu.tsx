@@ -7,6 +7,7 @@ import { signOut } from 'next-auth/react';
 import BackDrop from './BackDrop';
 import { SafeUser } from '@/types';
 
+
 interface UserMenuProps {
 	currentUser: SafeUser | null;
 }

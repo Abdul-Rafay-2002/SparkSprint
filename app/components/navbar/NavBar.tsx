@@ -20,15 +20,34 @@ const NavBar = async () => {
 							</a>
 						</div>
 						<div>
-							<ul className='flex justify-between'>
-								<li>menu items</li>
-								<li>menu items</li>
-								<li>menu items</li>
-								<li>menu items</li>
-								<li>menu items</li>
-								<li>menu items</li>
-								<li>menu items</li>
-								<li>menu items</li>
+							<ul className='flex justify-between gap-6'>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									All
+								</li>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									Phones
+								</li>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									Earburds & Headphones
+								</li>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									LCD's & TV's
+								</li>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									Speakers
+								</li>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									PC's & Desktops
+								</li>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									Laptops
+								</li>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									Watches
+								</li>
+								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
+									Accesories
+								</li>
 							</ul>
 						</div>
 						<div className='flex justify-between gap-5 items-center md:gap-8 relative'>

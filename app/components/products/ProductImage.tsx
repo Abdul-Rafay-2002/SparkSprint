@@ -41,17 +41,17 @@ const ProductImage: React.FC<ProductImageProps> = ({
 					);
 				})}
 			</div>
-			<div className='bg-white sm:col-span-5 lg:h-full md:col-span-5 lg:col-span-5 relative min-[360px]:col-span-6 min-[360px]:h-[500px] rounded-xl'>
+			<div className='bg-white sm:col-span-5 lg:h-full md:col-span-5 lg:col-span-5 relative min-[360px]:col-span-6 min-[360px]:ml-5 max-[600px]:ml-0 min-[360px]:h-[500px] rounded-xl'>
 				<Image
 					fill
-					className=' py-4 max-w-[350px] mx-auto h-full object-contain max-h-[600px]  min-h-[500px] sm:min-h-[400px] sm:h-full  min-[360px]:min-h-full'
+					className=' py-4 max-w-[350px] mx-auto h-full object-contain max-h-[600px] min-h-[500px] sm:min-h-[400px] sm:h-full  min-[360px]:min-h-full'
 					src={cartProduct.selectedImg.image}
 					alt={cartProduct.name}
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 				/>
 			</div>
 
-{/* for mobile thumbnils */}
+			{/* for mobile thumbnils */}
 			<div className='col-span-6 sm:hidden flex flex-row max-w-full mt-2 items-center justify-start gap-4 cursor-pointer h-full '>
 				{product.images.map((image: SelectedImgType) => {
 					return (

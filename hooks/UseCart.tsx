@@ -177,8 +177,8 @@ export const CartContextProvider = (props: Props) => {
 		handleQtyDecrease,
 		cartTotalAmount,
 		HandleClearCart,
-		handleSetPaymentIntent,
 		paymentIntent,
+		handleSetPaymentIntent,
 	};
 	return <CartContext.Provider value={value} {...props} />;
 };
