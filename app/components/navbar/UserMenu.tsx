@@ -6,8 +6,8 @@ import MenuItem from './MenuItem';
 import { signOut } from 'next-auth/react';
 import BackDrop from './BackDrop';
 import { SafeUser } from '@/types';
-
-
+import { MdPaid } from 'react-icons/md';
+import { ImUser } from 'react-icons/im';
 interface UserMenuProps {
 	currentUser: SafeUser | null;
 }
@@ -39,13 +39,23 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 							<div className='flex justify-evenly flex-col text-center'>
 								<Link
 									href='/orders'
-									className='text-white bg-slate-800 p-2 px-5 text-sm mb-2 hover:bg-[#00ED64] hover:text-black transition-colors'>
-									<MenuItem onClick={toggleOpen}>Your Orders</MenuItem>
+									className='text-white bg-slate-800 p-2 px-5 text-sm mb-1 hover:bg-[#00ED64] hover:text-black transition-colors'>
+									<MenuItem onClick={toggleOpen}>
+										<div className='flex items-center gap-2'>
+											<MdPaid size={22} />
+											Your Orders
+										</div>
+									</MenuItem>
 								</Link>
 								<Link
 									href='/admin'
-									className='text-white bg-slate-800 p-2 px-5 text-sm mb-2 hover:bg-[#00ED64] hover:text-black transition-colors'>
-									<MenuItem onClick={toggleOpen}>Admin Dashboard</MenuItem>
+									className='text-white bg-slate-800 p-2 px-5 text-sm mb-1 hover:bg-[#00ED64] hover:text-black transition-colors'>
+									<MenuItem onClick={toggleOpen}>
+										<div className='flex items-center gap-2'>
+											<ImUser size={22} />
+											Admin Dashboard
+										</div>
+									</MenuItem>
 								</Link>
 								<MenuItem
 									onClick={() => {

@@ -9,8 +9,16 @@ import { LuBadgeCheck } from 'react-icons/lu';
 import { FaArrowLeft } from 'react-icons/fa6';
 import ItemContent from './ItemContent';
 import { formatPrice } from '@/utils/FormatPrice';
-const CartClient = () => {
+import { SafeUser } from '@/types';
+import { useRouter } from 'next/navigation';
+import { FaCartArrowDown } from 'react-icons/fa';
+
+interface CartClientProps {
+	currentUser: SafeUser | null;
+}
+const CartClient: React.FC<CartClientProps> = ({ currentUser }) => {
 	const { cartProducts, HandleClearCart, cartTotalAmount } = useCart();
+	const router = useRouter();
 
 	if (!cartProducts || cartProducts.length === 0) {
 		return (
@@ -79,12 +87,16 @@ const CartClient = () => {
 					</p>
 					<div className='w-full'>
 						<Button
-							label='Checkout'
-							onClick={() => {}}
+							label={currentUser ? 'Checkout' : 'Login to Checkout'}
+							onClick={() => {
+								currentUser
+									? router.push('/checkout/')
+									: router.push('/login/');
+							}}
 							small
-							outline
+							outline={currentUser ? false : true}
 							custom='w-full'
-							icon={LuBadgeCheck}
+							icon={currentUser ? LuBadgeCheck : FaCartArrowDown}
 						/>
 					</div>
 					<div className='w-full mt-6'>

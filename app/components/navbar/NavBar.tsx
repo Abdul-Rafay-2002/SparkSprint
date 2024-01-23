@@ -46,7 +46,7 @@ const NavBar = async () => {
 									Watches
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									Accesories
+									Accessories
 								</li>
 							</ul>
 						</div>

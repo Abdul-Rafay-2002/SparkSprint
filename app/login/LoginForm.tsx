@@ -34,7 +34,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
 		if(currentUser){
 			router.push('/');
 			router.refresh();
-			toast.success("You're already logged in..");
+			toast.success("You're logged in..");
 		}
 	}, []);
 

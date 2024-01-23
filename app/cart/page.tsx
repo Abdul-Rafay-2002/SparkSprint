@@ -1,11 +1,13 @@
+import { getCurrentUser } from '@/actions/getCurrentUser';
 import Container from '../components/Container';
 import CartClient from './CartClient';
 
-const Cart = () => {
+const Cart = async() => {
+	const currentUser = await getCurrentUser();
 	return (
 		<div className='py-16 w-full bg-[#001e2b]'>
 			<Container>
-				<CartClient />
+				<CartClient currentUser={currentUser} />
 			</Container>
 		</div>
 	);
