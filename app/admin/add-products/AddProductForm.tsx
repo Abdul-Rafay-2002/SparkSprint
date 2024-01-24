@@ -3,11 +3,24 @@
 import Heading from '@/app/components/Heading';
 import CategoryTab from '@/app/components/input/CategoryTab';
 import CheckBox from '@/app/components/input/CheckBox';
+import SelectColor from '@/app/components/input/SelectColor';
 import TextArea from '@/app/components/input/TextArea';
 import InputV2 from '@/app/components/input_v_2/InputV2';
 import { categories } from '@/utils/Categories';
+import { colors } from '@/utils/Colors';
 import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
+
+export type ImageType = {
+	color: string;
+	colorCode: string;
+	image: File | null;
+};
+export type UploadedImageType = {
+	color: string;
+	colorCode: string;
+	image: string;
+};
 
 const AddProductForm = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -38,11 +51,12 @@ const AddProductForm = () => {
 			shouldTouch: true,
 		});
 	};
+
 	return (
 		<>
 			<Heading
 				title='Add Products'
-				customColor='text-white uppercase underline decoration-[#00ED64] underline-offset-8 mb-12'
+				customColor='text-white text-black uppercase underline decoration-[#00ED64] underline-offset-8 mb-8'
 			/>
 			<div className='flex w-full flex-row gap-8 items-start'>
 				<div className='w-[50%]'>
@@ -53,7 +67,7 @@ const AddProductForm = () => {
 						register={register}
 						errors={errors}
 						required
-						width='max-w-[100%] w-full mb-16'
+						width='max-w-[100%] w-full mb-[75px]'
 					/>
 					<InputV2
 						id='price'
@@ -63,7 +77,7 @@ const AddProductForm = () => {
 						errors={errors}
 						required
 						type='number'
-						width='max-w-[100%] w-full mb-16'
+						width='max-w-[100%] w-full mb-[75px]'
 					/>
 
 					<InputV2
@@ -73,7 +87,7 @@ const AddProductForm = () => {
 						register={register}
 						errors={errors}
 						required
-						width='max-w-[100%] w-full mb-16'
+						width='max-w-[100%] w-full mb-[75px]'
 					/>
 					<TextArea
 						id='description'
@@ -114,6 +128,31 @@ const AddProductForm = () => {
 							})}
 						</div>
 					</div>
+				</div>
+			</div>
+			<div className='w-full flex flex-col flex-wrap gap-4'>
+				<div className=' mt-4'>
+					<h3 className='text-slate-200 font-semibold mb-1 text-2xl'>
+						Select the available colors of the products along with their
+						respective images for upload.
+					</h3>
+					<p className='text-slate-500'>
+						You must upload an image for each of the color selected otherwise
+						your color selection will be ignored.
+					</p>
+				</div>
+				<div className='grid grid-cols-2 md:grid-cols-3'>
+					{colors.map((item, index) => {
+						return (
+							<SelectColor
+								key={index}
+								item={item}
+								addImageToState={() => {}}
+								removeImageFromState={() => {}}
+								isProductCreated={false}
+							/>
+						);
+					})}
 				</div>
 			</div>
 		</>
