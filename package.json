@@ -26,6 +26,7 @@
     "bcrypt": "^5.1.1",
     "eslint": "8.55.0",
     "eslint-config-next": "14.0.4",
+    "firebase": "^10.7.2",
     "generate": "^0.14.0",
     "micro": "^10.0.1",
     "moment": "^2.30.1",

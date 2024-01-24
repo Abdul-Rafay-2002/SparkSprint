@@ -1,10 +1,9 @@
 'use client';
 
-import Container from '../components/Container';
-
-const Admin = () => {
+const Admin = async () => {
+	
 	return (
-		<div>
+		<div className='bg-black'>
 			<div>admin</div>
 		</div>
 	);

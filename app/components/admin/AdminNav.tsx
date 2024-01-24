@@ -1,47 +1,53 @@
 'use client';
 
 import Link from 'next/link';
-import Container from '../Container';
 import AdminNavItem from './AdminNavItem';
-import { MdDashboard } from 'react-icons/md';
-import { usePathname } from 'next/navigation';
+import { RxDashboard } from 'react-icons/rx';
+import { usePathname, useRouter } from 'next/navigation';
+import { BsBoxes } from 'react-icons/bs';
+import { TbSettingsUp } from 'react-icons/tb';
+import { GrChapterAdd } from 'react-icons/gr';
+import { signOut } from 'next-auth/react';
 
 const AdminNav = () => {
 	const pathName = usePathname();
+	const router = useRouter();
+	const handleLogout = () => {
+		signOut(); // Call your signOut function
+		router.push('/'); // Redirect to the homepage
+	};
 	return (
-		<div className='w-full top-20 border-1 pt-3'>
-			<Container>
-				<div>
-					<Link href='/admin'>
-						<AdminNavItem
-							label='Dashboard'
-							icon={MdDashboard}
-							selected={pathName === '/admin'}
-						/>
-					</Link>
-					<Link href='/admin/add-products'>
-						<AdminNavItem
-							label='Add Products'
-							icon={MdDashboard}
-							selected={pathName === '/admin/add-products'}
-						/>
-					</Link>
-					<Link href='/admin/manage-products'>
-						<AdminNavItem
-							label='Manage Products'
-							icon={MdDashboard}
-							selected={pathName === '/admin/manage-products'}
-						/>
-					</Link>
-					<Link href='/admin/manage-orders'>
-						<AdminNavItem
-							label='Manage Orders'
-							icon={MdDashboard}
-							selected={pathName === '/admin/manage-orders'}
-						/>
-					</Link>
-				</div>
-			</Container>
+		<div className='w-full top-20 border-1 py-3'>
+			<div>
+				<Link href='/admin'>
+					<AdminNavItem
+						label='Dashboard'
+						icon={RxDashboard}
+						selected={pathName === '/admin'}
+					/>
+				</Link>
+				<Link href='/admin/add-products'>
+					<AdminNavItem
+						label='Add Products'
+						icon={GrChapterAdd}
+						selected={pathName === '/admin/add-products'}
+					/>
+				</Link>
+				<Link href='/admin/manage-products'>
+					<AdminNavItem
+						label='Manage Products'
+						icon={BsBoxes}
+						selected={pathName === '/admin/manage-products'}
+					/>
+				</Link>
+				<Link href='/admin/manage-orders'>
+					<AdminNavItem
+						label='Manage Orders'
+						icon={TbSettingsUp}
+						selected={pathName === '/admin/manage-orders'}
+					/>
+				</Link>
+			</div>
 		</div>
 	);
 };

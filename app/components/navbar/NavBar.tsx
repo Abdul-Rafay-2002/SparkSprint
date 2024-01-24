@@ -28,7 +28,7 @@ const NavBar = async () => {
 									Phones
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									Earburds & Headphones
+									Headphones
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
 									LCDs & TVs
