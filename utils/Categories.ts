@@ -5,6 +5,8 @@ import { CiSpeaker } from "react-icons/ci";
 import { GiWatch } from "react-icons/gi";
 import { PiComputerTower } from "react-icons/pi";
 import { GrMonitor } from 'react-icons/gr';
+import { CgScreenWide } from "react-icons/cg";
+import { BsFillMouse3Fill } from 'react-icons/bs';
 
 export const categories = [
     {
@@ -21,7 +23,7 @@ export const categories = [
     },
     {
         label: 'LCDs & TVs',
-        icon: GrMonitor,
+        icon: CgScreenWide,
     },
     {
         label: 'Speakers',
@@ -29,11 +31,15 @@ export const categories = [
     },
     {
         label: 'PCs & Desktops',
-        icon: FaDesktop,
+        icon: GrMonitor,
     },
     {
         label: 'Laptops',
         icon: MdOutlineLaptopChromebook,
+    },
+    {
+        label: 'Mouses',
+        icon: BsFillMouse3Fill,
     },
     {
         label: 'Watches',

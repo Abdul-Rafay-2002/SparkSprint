@@ -1,12 +1,20 @@
 import { getCurrentUser } from '@/actions/getCurrentUser';
 import NullData from '@/app/components/NullData';
+import ManageProducts from './ManageProducts';
+import getProducts from '@/actions/getProducts';
 
-const ManageProducts = async () => {
+const ManageOrders = async () => {
 	const currentUser = await getCurrentUser();
+	const products = await getProducts({ category: null });
+
 	if (!currentUser || currentUser.role !== 'ADMIN') {
 		return <NullData title='Oops! Access Denied.' />;
 	}
-	return <div></div>;
+	return (
+		<div>
+			<ManageProducts products={products} />
+		</div>
+	);
 };
 
-export default ManageProducts;
+export default ManageOrders;

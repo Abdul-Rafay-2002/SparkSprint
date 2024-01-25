@@ -215,9 +215,10 @@ h3.logo::before {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border:5px solid #00ed639c;
-  
+  border: 5px solid #00ed639c;
+
 }
+
 @layer base {
 
   input[type="number"]::-webkit-inner-spin-button,
@@ -225,4 +226,78 @@ h3.logo::before {
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.MuiDataGrid-cellContent,
+.MuiDataGrid-cell,
+.MuiDataGrid-cell,
+.MuiTablePagination-toolbar,
+.MuiSvgIcon-root,
+.MuiTablePagination-selectLabel,
+.MuiDataGrid-selectedRowCount {
+  color: #fafafa !important;
+  font-family: 'Inter' !important;
+}
+
+.MuiDataGrid-withBorderColor {
+  border-color: #cccccc75 !important;
+}
+
+.MuiDataGrid-columnHeaderTitle,
+.MuiDataGrid-columnHeaderTitle,
+.MuiDataGrid-columnHeaders .MuiSvgIcon-root {
+  color: #000 !important;
+  font-family: 'Inter' !important;
+  font-weight: 700 !important;
+
+}
+
+.MuiDataGrid-row:nth-child(odd) {
+  background: #ffffff0e;
+}
+
+.MuiDataGrid-checkboxInput {
+  accent-color: #cccccc75;
+}
+
+.MuiDataGrid-columnHeaders {
+  background: #00ED64;
+}
+
+.MuiTypography-root {
+  font-family: 'Inter' !important;
+}
+
+.MuiDataGrid-menuList {
+  background: #001e2b;
+  color: #fff;
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
+  border-bottom: 2px solid #00ed63;
+}
+
+.MuiPaper-elevation {
+  background: transparent;
+}
+
+.MuiMenuItem-gutters:hover {
+  background: #ffff;
+}
+
+.customScollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.customScollbar::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #00ed63;
+}
+
+.customScollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #001e2b;
+}
+
+.customScollbar::-webkit-scrollbar {
+  width: 12px;
 }
