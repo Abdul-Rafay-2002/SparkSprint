@@ -47,16 +47,19 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 										</div>
 									</MenuItem>
 								</Link>
-								<Link
-									href='/admin'
-									className='text-white bg-slate-800 p-2 px-5 text-sm mb-1 hover:bg-[#00ED64] hover:text-black transition-colors'>
-									<MenuItem onClick={toggleOpen}>
-										<div className='flex items-center gap-2'>
-											<ImUser size={22} />
-											Admin Dashboard
-										</div>
-									</MenuItem>
-								</Link>
+								{currentUser.role === 'ADMIN' && (
+									<Link
+										href='/admin'
+										className='text-white bg-slate-800 p-2 px-5 text-sm mb-1 hover:bg-[#00ED64] hover:text-black transition-colors'>
+										<MenuItem onClick={toggleOpen}>
+											<div className='flex items-center gap-2'>
+												<ImUser size={22} />
+												Admin Dashboard
+											</div>
+										</MenuItem>
+									</Link>
+								)}
+
 								<MenuItem
 									onClick={() => {
 										toggleOpen();

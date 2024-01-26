@@ -2,11 +2,12 @@ import { getCurrentUser } from "@/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from '@/libs/prismadb';
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE(request: Request, {params}: {params: {id: string}}) {
 
     const currentUser = await getCurrentUser();
 
-    if (!currentUser || currentUser.role !== 'ADMIN') {
+    if (!currentUser) return NextResponse.error();
+    if (currentUser.role !== 'ADMIN') {
         return NextResponse.error();
     }
 
@@ -14,7 +15,7 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
         where: {
             id: params.id
         }
-
+       
     });
     return NextResponse.json(product)
 }
