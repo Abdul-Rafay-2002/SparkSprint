@@ -1,4 +1,3 @@
-import { products } from '@/utils/Products';
 import HomeBanner from './components/HomeBanner';
 import Container from './components/Container';
 import ProductCard from './components/products/ProductCard';
@@ -19,7 +18,7 @@ export default async function Home({ searchParams }: HomeProps) {
 	function shuffleArray(array: any){
 		for (let i = array.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i+1));
-			[array[i], array[j]] = [array[j], array[i]]
+			[array[i], array[j]] = [array[j], array[i]];
 		}
 		return array;
 	}
@@ -34,7 +33,7 @@ export default async function Home({ searchParams }: HomeProps) {
 				</section>
 				<Container>
 					<section>
-						<h2 className='text-center mt-14 text-[#001e2b]'>
+						<h2 className='text-center mt-14 mb-8	 text-[#001e2b]'>
 							Our Latest Products
 						</h2>
 						<Categories />

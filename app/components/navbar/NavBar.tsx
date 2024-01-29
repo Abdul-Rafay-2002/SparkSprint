@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '../Container';
 import { BsSearch } from 'react-icons/bs';
 import CartCount from './CartCount';
 import UserMenu from './UserMenu';
 import { getCurrentUser } from '@/actions/getCurrentUser';
+import SearchBar from '../SearchBar';
 
 const NavBar = async () => {
 	const currentUser = await getCurrentUser();
+
 	return (
 		<header className='sticky top-0 w-full bg-[#001e2b] backdrop-blur-md z-40 shadow-sm border-b-2 border-emerald-500'>
 			<div className='py-4'>
@@ -51,9 +53,7 @@ const NavBar = async () => {
 							</ul>
 						</div>
 						<div className='flex justify-between gap-5 items-center md:gap-8 relative'>
-							<div className='bg-[#ffffff1a]  flex w-12 h-12 justify-center items-center rounded-full cursor-pointer'>
-								<BsSearch size={22} color='#fff' />
-							</div>
+							<SearchBar />
 							<CartCount />
 							<UserMenu currentUser={currentUser} />
 						</div>

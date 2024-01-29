@@ -9,9 +9,10 @@ interface ListRatingProps {
 }
 
 const ListRating: React.FC<ListRatingProps> = ({ product }) => {
+	if(product.reviews.length === 0) return null
 	return (
 		<div>
-			<Heading title='Product Reviews' customColor='text-gray-100 uppercase' />
+			<Heading title='Product Reviews' customColor='text-gray-100 uppercase mt-8' />
 			<div className='text-sm mt-2'>
 				{product.reviews &&
 					product.reviews.map((review: any) => {
@@ -20,7 +21,7 @@ const ListRating: React.FC<ListRatingProps> = ({ product }) => {
 								<div className='flex flex-row justify-between items-center mb-4'>
 									<div className='flex gap-3 items-center'>
 										<div className='avatarBoxshadow'>
-											<Avatar src={review.user.images} color='#00ED64' />
+											<Avatar src={review.user.image} color='#00ED64' />
 										</div>
 										<div className='flex flex-col'>
 											<div className='font-bold text-lg'>
