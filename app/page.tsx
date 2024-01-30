@@ -33,7 +33,7 @@ export default async function Home({ searchParams }: HomeProps) {
 					<HomeBanner></HomeBanner>
 				</section>
 				<Container>
-					<section>
+					<section id='latest-products'>
 						<h2 className='text-center mt-14 mb-8	 text-[#001e2b]'>
 							Our Latest Products
 						</h2>

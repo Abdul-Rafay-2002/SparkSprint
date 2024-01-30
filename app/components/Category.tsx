@@ -23,7 +23,7 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
 			const updatedQuery: any = { ...currentQuery, category: label };
 			const URL = queryString.stringifyUrl(
 				{
-					url: '/',
+					url: '#latest-products/',
 					query: updatedQuery,
 				},
 				{ skipNull: true }
@@ -37,9 +37,9 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
 			onClick={handleClick}
 			className={`${
 				selected
-					? 'text-slate-800 border-slate-800 bg-[#001e2b2d] hover:text-slate-900'
-					: 'border-transparent text-slate-800  hover:border-slate-800 hover:bg-[#001e2b2d] hover:text-slate-900'
-			} flex items-center max-w-[200px] justify-center gap-1 border-2 py-2 px-4 rounded-full   hover:text-green-500 transition-colors cursor-pointer`}>
+					? 'text-black border-black bg-[#00ED64] hover:text-slate-900'
+					: 'border-transparent text-black  hover:border-black hover:bg-[#00ED64] hover:text-black'
+			} flex items-center max-w-[200px] justify-center gap-1 border-2 py-2 px-4 rounded-full   transition-colors cursor-pointer`}>
 			<Icon size={20} />
 			<h4 className=''>{label}</h4>
 		</div>

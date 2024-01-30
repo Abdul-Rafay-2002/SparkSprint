@@ -75,7 +75,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
 	const handleQtyIncrease = useCallback(() => {
 		if (cartProduct.quantity === 100) {
-			return ;
+			return;
 		}
 		setCartProduct((prev) => {
 			return { ...prev, quantity: ++prev.quantity };
@@ -120,7 +120,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 				<div className='flex items-center gap-2 mb-4 -mt-2'>
 					<Rating value={productRating} size='large' name='size-large' />
 					<div className='text-xs text-slate-400 font-bold'>
-						({productRating} {productRating <= 1  ? "Star" : "Stars"} )
+						({productRating} {productRating <= 1 ? 'Star' : 'Stars'} )
 					</div>
 				</div>
 				<p className='text-justify'>{product.description}</p>
@@ -165,11 +165,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 							handleQtyIncrease={handleQtyIncrease}
 							handleQtyDecrease={handleQtyDecrease}
 						/>
-						<Button
-							label={'Add to Cart'}
-							disabled={false}
-							onClick={() => handleAddProductToCart(cartProduct)}
-						/>
+
+						{product.inStock && (
+							<Button
+								label={'Add to Cart'}
+								disabled={false}
+								onClick={() => handleAddProductToCart(cartProduct)}
+							/>
+						)}
 					</>
 				)}
 			</div>

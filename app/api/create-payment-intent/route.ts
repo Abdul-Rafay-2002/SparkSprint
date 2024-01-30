@@ -14,11 +14,10 @@ const calculateOrderAmount = (items: CartProductType[]) => {
 
         return acc + itemTotal;
     }, 0);
-
+    
     const price:any = Math.floor(totalPrice); 
     return price;
 };
-
 
 
 export async function POST(request: Request) {
