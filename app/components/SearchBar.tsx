@@ -51,7 +51,7 @@ const SearchBar = () => {
 					/>
 					<button
 						onClick={handleSubmit(onSubmit)}
-						className='absolute text-white right-0 bg-[#00ED64] p-[9px] rounded-md'>
+						className='absolute text-slate-950 font-bold right-0 bg-[#00ED64] p-[9px] rounded-md'>
 						Submit
 					</button>
 				</div>

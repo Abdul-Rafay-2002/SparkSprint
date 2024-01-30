@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import HomeBanner from './components/HomeBanner';
 import Container from './components/Container';
 import ProductCard from './components/products/ProductCard';
@@ -39,7 +40,7 @@ export default async function Home({ searchParams }: HomeProps) {
 						<Categories />
 						<div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-5 mt-20 mb-20'>
 							{shuffledProducts.map((product: any) => {
-								return <ProductCard data={product} />;
+								return <ProductCard data={product} key={product.id} />;
 							})}
 						</div>
 					</section>
