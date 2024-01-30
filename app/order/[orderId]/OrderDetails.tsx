@@ -40,7 +40,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
 					</div>
 					<div className='flex gap-3  mb-2'>
 						<h5 className='font-bold text-white'>Total Amount:</h5>
-						<p className='text-slate-400'>{formatPrice(order.amount)}</p>
+						<p className='text-slate-400'>{formatPrice(order.amount / 100)}</p>
 					</div>
 					<div className='flex gap-3 items-center mb-2'>
 						<h5 className='font-bold text-white'>Payment Status:</h5>

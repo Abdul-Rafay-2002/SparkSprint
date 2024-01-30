@@ -7,7 +7,6 @@ import SetQuantity from '@/app/components/products/SetQuantity';
 import { useCart } from '@/hooks/UseCart';
 import { formatPrice } from '@/utils/FormatPrice';
 import { Rating } from '@mui/material';
-import Image from 'next/image';
 import Link from 'next/link';
 import { BsFillCartCheckFill } from 'react-icons/bs';
 import { useCallback, useEffect, useState } from 'react';
@@ -121,7 +120,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 				<div className='flex items-center gap-2 mb-4 -mt-2'>
 					<Rating value={productRating} size='large' name='size-large' />
 					<div className='text-xs text-slate-400 font-bold'>
-						({productRating} reviews)
+						({productRating} {productRating <= 1  ? "Star" : "Stars"} )
 					</div>
 				</div>
 				<p className='text-justify'>{product.description}</p>

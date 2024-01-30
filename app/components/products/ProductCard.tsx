@@ -36,7 +36,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
 				</div>
 				<div className='flex flex-col items-center'>
 					<Rating size='large' value={productRating} readOnly />
-					<div className='text-sm'>{data.reviews.length} reviews</div>
+					<div className='text-sm'>
+						{data.reviews.length} {data.reviews.length <= 1 ? 'review' : 'reviews'}
+					</div>
 				</div>
 				<div>
 					<p className='text-sm font-bold text-white-300/80'>

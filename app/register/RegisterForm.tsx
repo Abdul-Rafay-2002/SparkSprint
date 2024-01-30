@@ -54,7 +54,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
 					if (callback?.ok) {
 						router.push('/cart/');
 						router.refresh();
-						toast.success('Logged In Successfully!');
+						toast.success('Register Successfully!');
 					}
 					if (callback?.error) {
 						toast.error(callback?.error);

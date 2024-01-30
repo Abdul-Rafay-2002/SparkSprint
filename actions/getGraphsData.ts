@@ -37,9 +37,7 @@ export default async function getGraphData() {
 
             //Format the day as string (e.g Monday)
             const day = currentDate.format("dddd");
-            console.log("day<<<<<<<", day, currentDate)
-
-
+            
             //initialized the aggregated data for the day with the day, date and totalAmount
             aggregratedData[day] = {
                 day,
