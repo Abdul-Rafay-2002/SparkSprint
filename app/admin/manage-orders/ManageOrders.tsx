@@ -5,8 +5,8 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { formatPrice } from '@/utils/FormatPrice';
 import Heading from '@/app/components/Heading';
 import Status from '@/app/components/Status';
-import {  IoMdDoneAll } from 'react-icons/io';
-import {  TbTruckDelivery } from 'react-icons/tb';
+import { IoMdDoneAll } from 'react-icons/io';
+import { TbTruckDelivery } from 'react-icons/tb';
 import ActionBtn from '@/app/components/ActionBtn';
 import { FaEye } from 'react-icons/fa6';
 import { useCallback } from 'react';
@@ -17,6 +17,7 @@ import moment from 'moment';
 import { IoTimerOutline } from 'react-icons/io5';
 import { LuBadgeCheck } from 'react-icons/lu';
 import { BsSendCheckFill } from 'react-icons/bs';
+import { RiDeleteBin5Fill } from 'react-icons/ri';
 
 interface ManageOrdersProps {
 	orders: ExtendedOrder[];
@@ -123,13 +124,18 @@ const ManageOrders: React.FC<ManageOrdersProps> = ({ orders }) => {
 						<ActionBtn
 							icon={TbTruckDelivery}
 							onClick={() => {
-								handleDispatch(params.row.id);
+								params.row.paymentstatus === 'complete'
+									? handleDispatch(params.row.id)
+									: toast.error('Payment is in pending');
 							}}
 						/>
+
 						<ActionBtn
 							icon={BsSendCheckFill}
 							onClick={() => {
-								handleDeliver(params.row.id);
+								params.row.paymentstatus === 'complete'
+									? handleDeliver(params.row.id)
+									: toast.error('Payment is in pending');
 							}}
 						/>
 						<ActionBtn
@@ -143,6 +149,7 @@ const ManageOrders: React.FC<ManageOrdersProps> = ({ orders }) => {
 			},
 		},
 	];
+
 
 	const handleDispatch = useCallback((id: string) => {
 		axios
