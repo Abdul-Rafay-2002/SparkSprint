@@ -19,7 +19,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 	}, []);
 
 	return (
-		<div className='bg-[#ffffff1a] flex w-12 h-12 justify-center items-center rounded-full cursor-pointer '>
+		<div className='bg-[#ffffff1a] flex w-12 h-12 justify-center items-center rounded-full cursor-pointer  max-[500px]:w-10 max-[500px]:h-10 '>
 			<div onClick={toggleOpen} className=''>
 				<Avatar color='#fff' src={currentUser?.image} />
 			</div>
