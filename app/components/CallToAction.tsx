@@ -7,12 +7,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from './Container';
 
-interface CallToActionProps{
-	heading: string,
-	description?: string,
-	buttonText?: string,
-	buttonLink?: string,
-}
 
 interface SettingsProps {
 	dots: boolean;
@@ -25,7 +19,7 @@ interface SettingsProps {
 	autoplaySpeed: number;
 	slidesToScroll: number;
 }
-const CallToAction:React.FC<CallToActionProps> = ({heading, description, buttonLink, buttonText}) => {
+const CallToAction = () => {
 	const settings: SettingsProps = {
 		dots: false,
 		fade: true,
