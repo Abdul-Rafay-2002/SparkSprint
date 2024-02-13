@@ -18,7 +18,7 @@ const Categories: React.FC<CategoriesProps> = () => {
 	return (
 		<div className=''>
 			<Container>
-				<div className='flex justify-center items-center gap-2  flex-wrap'>
+				<div className='flex justify-center items-center gap-2 max-[768px]:justify-start  flex-wrap'>
 					{categories.map((item) => (
 						<Category
 							key={item.label}

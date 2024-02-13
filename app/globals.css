@@ -179,25 +179,11 @@ h3.logo::before {
 
 
 .gradient-animation {
-  animation: gradientAnimation 5s infinite;
-  /* background: linear-gradient(to right, #15803d 10%, #86efac 30%, #052e16 90%); */
-  background: #001e2b;
-  background-size: 500% 200%;
+  background: url(/bg.webp) no-repeat;
+  background-size: cover;
+  
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 .avatarBoxshadow {
   box-shadow: 0 0 10px 0px #00ed6375;

@@ -40,7 +40,7 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
 				selected
 					? 'text-black border-black bg-[#00ED64] hover:text-slate-900'
 					: 'border-transparent text-black  hover:border-black hover:bg-[#00ED64] hover:text-black'
-			} flex items-center max-w-[200px] justify-center gap-1 border-2 py-2 px-4 rounded-full transition-colors cursor-pointer`}>
+			} flex items-center  max-[768px]:w-[48%] max-[500px]:w-[100%] max-[500px]:justify-start justify-center max-[500px]:rounded-md gap-1 border-2 py-2 px-4 rounded-full transition-colors cursor-pointer`}>
 			<Icon size={20} />
 			<h4 className=''>{label}</h4>
 		</div>
