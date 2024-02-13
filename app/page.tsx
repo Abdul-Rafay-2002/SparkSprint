@@ -70,7 +70,7 @@ export default async function Home({ searchParams }: HomeProps) {
 					</div>
 				</section>
 			</Container>
-			<section>
+			<section className='px-16'>
 				<CallToAction />
 			</section>
 		</div>
