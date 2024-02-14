@@ -11,7 +11,7 @@ const Categories: React.FC<CategoriesProps> = () => {
 	const category = params?.get('category');
     const pathName = usePathname();
     const isMainPage = pathName === '/';
-	const isProductPage = "/products";
+	const isProductPage = (pathName?.startsWith('/products'));
     if(!isMainPage && !isProductPage){
         return null
     }
