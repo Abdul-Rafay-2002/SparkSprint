@@ -10,9 +10,9 @@ const Categories: React.FC<CategoriesProps> = () => {
 	const params = useSearchParams();
 	const category = params?.get('category');
     const pathName = usePathname();
-    const isMainPage = pathName === '/';
-	const isProductPage = (pathName?.startsWith('/products'));
-    if(!isMainPage && !isProductPage){
+    const isMainPage = pathName === '/products';
+	// const isProductPage = (pathName?.startsWith('/products'));
+    if(!isMainPage ){
         return null
     }
 
