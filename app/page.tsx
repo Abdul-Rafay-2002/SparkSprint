@@ -4,7 +4,6 @@ import Container from './components/Container';
 import ProductCard from './components/products/ProductCard';
 import getProducts, { IProductParams } from '@/actions/getProducts';
 import NullData from './components/NullData';
-import Categories from './components/Categories';
 import CallToAction from './components/CallToAction';
 import Counter from './components/Counter';
 
@@ -14,12 +13,6 @@ interface HomeProps {
 
 export default async function Home({ searchParams }: HomeProps) {
 	const products = await getProducts(searchParams);
-	if (products.length === 0) {
-		return (
-			<NullData title='Oops! No Product found. Click "ALL" to clear filter  ' />
-		);
-	}
-
 	function shuffleArray(array: any) {
 		for (let i = array.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
@@ -33,7 +26,7 @@ export default async function Home({ searchParams }: HomeProps) {
 	return (
 		<div className='w-full'>
 			<section>
-				<HomeBanner></HomeBanner>
+				<HomeBanner />
 			</section>
 			<section>
 				<Container>
@@ -62,15 +55,18 @@ export default async function Home({ searchParams }: HomeProps) {
 					<h2 className='text-center mt-14 mb-8 max-[768px]:text-4xl	 text-[#001e2b]'>
 						Our Latest Products
 					</h2>
-					<Categories />
-					<div className='grid max-[500px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-5 mt-20 mb-20'>
-						{shuffledProducts.map((product: any) => {
-							return <ProductCard data={product} key={product.id} />;
-						})}
-					</div>
+					{shuffledProducts.length === 0 ? (
+						<NullData title='Oops! No Product found.' />
+					) : (
+						<div className='grid max-[500px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-5 mt-20 mb-20'>
+							{shuffledProducts.map((product: any) => (
+								<ProductCard data={product} key={product.id} />
+							))}
+						</div>
+					)}
 				</section>
 			</Container>
-			<section className='px-16'>
+			<section className='xl:px-16'>
 				<CallToAction />
 			</section>
 		</div>

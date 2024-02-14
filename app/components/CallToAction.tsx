@@ -7,7 +7,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from './Container';
 
-
 interface SettingsProps {
 	dots: boolean;
 	fade: boolean;
@@ -34,23 +33,23 @@ const CallToAction = () => {
 
 	return (
 		<Container>
-			<div className='flex flex-row items-center justify-center ctabg px-8 py-4 rounded-3xl mb-20 w-full h-full'>
-				<div className='w-[50%] h-full px-6'>
-					<h2 className='text-white text-5xl mb-2'>
+			<div className='flex flex-col-reverse lg:flex-row items-center justify-center bg-[#052929] px-8 py-4 rounded-3xl mb-20 w-full h-full'>
+				<div className='lg:w-[50%] w-[100%] h-full py-6 px-6'>
+					<h2 className='text-white text-center lg:text-left text-3xl  md:text-4xl lg:text-5xl mb-2'>
 						Spark Sprint: Your Premier Electronics E-Commerce Destination
 					</h2>
-					<p className='text-slate-300/70 mb-6'>
+					<p className='text-slate-300/70 mb-6 text-center lg:text-left'>
 						Experience seamless shopping and stay ahead in the tech game with
 						Spark Sprint.
 					</p>
 					<Link
-						href='#'
-						className='!bg-white !border-white text-slate-900 font-bold btn hover:!shadow-white'>
+						href='/products/'
+						className='!bg-white !table lg:!inline-block mx-auto lg:mx-none lg:text-left !border-white text-slate-900 font-bold btn hover:!shadow-white'>
 						Shop Now
 					</Link>
 				</div>
-				<div className='w-[50%] h-full'>
-					<Slider {...settings} className='w-[100%] h-full'>
+				<div className='lg:w-[50%] w-[100%] h-full mt-6 lg:mt-0'>
+					<Slider {...settings} className='lg:w-[100%] w-[100%] h-full'>
 						<div className='w-1/2 relative aspect-video'>
 							<Image
 								src='/hero.png'

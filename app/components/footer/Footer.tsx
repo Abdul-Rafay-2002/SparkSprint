@@ -3,6 +3,7 @@ import FooterList from './FooterList';
 import Link from 'next/link';
 import { FaFacebookF, FaGithub, FaInstagram, FaYoutube } from 'react-icons/fa';
 import Container from '../Container';
+import Image from 'next/image';
 const Footer = () => {
 	return (
 		<footer className='bg-[#001e2b] text-slate-100 text-sm border-t-2 border-emerald-500'>
@@ -47,8 +48,9 @@ const Footer = () => {
 					<div className='w-full md:w-1/3 mb-6 md:mb-0'>
 						<h4 className='text-lg'>About Us</h4>
 						<p className='text-slate-300/50 mt-2'>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-							dolorum, quidem debitis modi nisi sed non quia neque incidunt rem?
+							Experience the future today with Sparksprint, where every product
+							is carefully selected to complement and enhance your unique
+							lifestyle.
 						</p>
 					</div>
 					<FooterList>
@@ -91,16 +93,16 @@ const Footer = () => {
 				</div>
 			</Container>
 			<div>
-				<hr className='my-8 border-solid border-gray-700/50' />
+				<hr className='border-solid border-gray-700/50' />
 				<Container>
-					<p className='text-slate-300/50 text-md'>
+					<p className='text-slate-300/50 text-md my-6 flex gap-2 '>
 						&copy; {new Date().getFullYear()} Spark Sprint - All right reserved.
 						by
 						<Link
 							className='text-md font-bold hover:text-[#00ED64]'
 							href='https://abdulrafayportfolio.vercel.app/'
-							target='_blank'>{' '}
-							Rafay Dev
+							target='_blank'>
+							<Image src='https://abdulrafayportfolio.vercel.app/static/media/footer-logo.0723028e116b4f67fdcc.png' width={40} height={40} alt='Rafay Dev'></Image>
 						</Link>
 					</p>
 				</Container>

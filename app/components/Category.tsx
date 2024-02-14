@@ -15,7 +15,7 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
 	const params = useSearchParams();
 	const handleClick = useCallback(() => {
 		if (label === 'All') {
-			router.push('/');
+			router.push('/products/');
 		} else {
 			let currentQuery = {};
 			if (params) {
@@ -24,7 +24,7 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
 			const updatedQuery: any = { ...currentQuery, category: label };
 			const URL = queryString.stringifyUrl(
 				{
-					url: '#latest-products/',
+					url: '/products/',
 					query: updatedQuery,
 				},
 				{ skipNull: true }

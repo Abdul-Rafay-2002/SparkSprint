@@ -37,7 +37,7 @@ const SearchBar = () => {
 	};
 
 	return (
-		<div className='bg-[#ffffff1a]  max-[500px]:w-10 max-[500px]:h-10 relative flex w-12 h-12 justify-center items-center rounded-full cursor-pointer'>
+		<div className='bg-[#ffffff1a] max-[500px]:w-10 max-[500px]:h-10 relative flex w-12 h-12 justify-center items-center rounded-full cursor-pointer'>
 			<BsSearch size={22} color='#fff' onClick={handleSearchToggle} />
 
 			{isSearchBarVisible && (

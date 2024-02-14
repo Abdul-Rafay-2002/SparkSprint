@@ -18,7 +18,7 @@ const ProductDetail = async ({ params }: { params: IPrams }) => {
 		return <NullData title='Oops! This Product does not exist.' />;
 	}
 	return (
-		<div className='p-2 bg-[#092635] w-full md:py-10'>
+		<div className='p-2 bg-[#0b1f2c] w-full md:py-10'>
 			<Container>
 				<ProductDetails product={product} />
 				<div className='flex flex-col mt-20 gap-4 max-w-[550px] '>

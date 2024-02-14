@@ -181,13 +181,16 @@ h3.logo::before {
 .gradient-animation {
   background: url(/bg.webp) no-repeat;
   background-size: cover;
-  
+
 }
-.ctabg{
-  background: radial-gradient(63.24% 50% at 50% 0%, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+
+.ctabg {
+  background: radial-gradient(65% 50% at 50% 0%, #FFF 20%, rgba(255, 255, 255, 0.00) 80%);
   background-blend-mode: overlay, normal;
   background-color: #052929;
 }
+
+
 
 .avatarBoxshadow {
   box-shadow: 0 0 10px 0px #00ed6375;
