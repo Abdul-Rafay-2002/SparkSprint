@@ -7,13 +7,11 @@ import { usePathname, useSearchParams } from 'next/navigation';
 interface CategoriesProps {}
 
 const Categories: React.FC<CategoriesProps> = () => {
-	const params = useSearchParams();
-	const category = params?.get('category');
-    const pathName = usePathname();
-    const isMainPage = pathName === '/';
-   const isProductPage = pathName === '/products';
-	// const isProductPage = (pathName?.startsWith('/products'));
-    if(!isMainPage && !isProductPage ){
+const params = useSearchParams();
+const category = params?.get('category');
+const pathName = usePathname();
+const isMainPage = pathName === '/';
+    if(!isMainPage){
         return null
     }
 
