@@ -13,7 +13,7 @@ const Categories: React.FC<CategoriesProps> = () => {
     const isMainPage = pathName === '/';
    const isProductPage = pathName === '/products';
 	// const isProductPage = (pathName?.startsWith('/products'));
-    if(!isMainPage && isProductPage ){
+    if(!isMainPage && !isProductPage ){
         return null
     }
 
