@@ -1,4 +1,4 @@
-export const revalidate = 0;
+
 import HomeBanner from './components/HomeBanner';
 import Container from './components/Container';
 import ProductCard from './components/products/ProductCard';
