@@ -4,6 +4,7 @@ import Container from './Container';
 import Category from './Category';
 import { usePathname, useSearchParams } from 'next/navigation';
 
+
 interface CategoriesProps {}
 
 const Categories: React.FC<CategoriesProps> = () => {

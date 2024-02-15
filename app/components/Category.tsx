@@ -24,7 +24,7 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
 			const updatedQuery: any = { ...currentQuery, category: label };
 			const URL = queryString.stringifyUrl(
 				{
-					url: '/products',
+					url: '/',
 					query: updatedQuery,
 				},
 				{ skipNull: true }
