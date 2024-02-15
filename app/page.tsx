@@ -52,7 +52,7 @@ export default async function Home({ searchParams }: HomeProps) {
 			</section>
 			<Container>
 				<section id='latest-products'>
-					<h2 className='text-center mt-14 mb-8 max-[768px]:text-4xl	 text-[#001e2b]'>
+					<h2 className='text-center mt-14 mb-8 max-[768px]:text-4xl	 text-[#001e2b] max-[500px]:text-3xl'>
 						Our Latest Products
 					</h2>
 					{shuffledProducts.length === 0 ? (

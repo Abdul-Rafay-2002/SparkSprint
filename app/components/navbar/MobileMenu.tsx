@@ -7,23 +7,25 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 const MobileMenu = () => {
 	const [toggle, setToggle] = useState(false);
 	return (
-		<div className='bg-[#ffffff1a] relative flex w-12 h-12 justify-center items-center rounded-full cursor-pointer max-[500px]:w-10 max-[500px]:h-10'>
+		<div className='bg-[#ffffff1a] relative flex w-12 h-12 justify-center items-center rounded-full cursor-pointer max-[500px]:w-8 max-[500px]:h-8'>
 			{!toggle ? (
 				<RxHamburgerMenu
 					size={22}
 					color='#fff'
+					className='max-[500px]:w-4'
 					onClick={() => setToggle(true)}
 				/>
 			) : (
 				<AiOutlineClose
 					size={22}
 					color='#fff'
+					className='max-[500px]:w-4'
 					onClick={() => setToggle(false)}
 				/>
 			)}
 
 			{toggle && (
-				<div className='fixed top-20 left-0 w-full min-h-screen bg-gray-900  flex flex-col justify-center items-center'>
+				<div className='fixed top-20 max-[500px]:top-16 left-0 w-full min-h-screen bg-gray-900  flex flex-col justify-center items-center'>
 					<ul className='flex justify-start flex-col  w-full h-full'>
 						<li className='text-base hover:bg-[#00ED64] py-3 px-6 hover:text-black hover:transition-colors font-semibold'>
 							All

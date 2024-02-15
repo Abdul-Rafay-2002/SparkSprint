@@ -11,7 +11,7 @@ const NavBar = async () => {
 	const currentUser = await getCurrentUser();
 
 	return (
-		<header className='sticky top-0 w-full bg-[#001e2b] backdrop-blur-md z-40 shadow-sm border-b-2 border-emerald-500'>
+		<header className='sticky top-0  w-full bg-[#001e2b] backdrop-blur-md z-40 shadow-sm border-b-2 border-emerald-500'>
 			<div className='py-4'>
 				<Container>
 					<div className='flex items-center justify-between flex-row gap-3 md:gap-0'>

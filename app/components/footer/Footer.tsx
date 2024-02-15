@@ -11,19 +11,29 @@ const Footer = () => {
 				<div className='flex flex-col md:flex-row justify-between pt-16 pb-8'>
 					<FooterList>
 						<h4 className='text-lg'>Shop Category</h4>
-						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
+						<Link
+							className=' text-slate-300/50 hover:text-[#00ED64]'
+							href='/products?category=Phones'>
 							Phones
 						</Link>
-						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
+						<Link
+							className=' text-slate-300/50 hover:text-[#00ED64]'
+							href='/products?category=Laptops'>
 							Laptops
 						</Link>
-						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
-							Desktops
+						<Link
+							className=' text-slate-300/50 hover:text-[#00ED64]'
+							href='/products?category=Headphones'>
+							Headphones
 						</Link>
-						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
+						<Link
+							className=' text-slate-300/50 hover:text-[#00ED64]'
+							href='/products?category=PCs%20%26%20Desktops'>
 							Tvs
 						</Link>
-						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
+						<Link
+							className=' text-slate-300/50 hover:text-[#00ED64]'
+							href='/products?category=Accessories'>
 							Accessories
 						</Link>
 					</FooterList>
@@ -38,7 +48,9 @@ const Footer = () => {
 						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
 							Return & Exchange
 						</Link>
-						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
+						<Link
+							className=' text-slate-300/50 hover:text-[#00ED64]'
+							href='/products?category=Watches'>
 							Watches
 						</Link>
 						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
@@ -102,7 +114,11 @@ const Footer = () => {
 							className='text-md font-bold hover:text-[#00ED64]'
 							href='https://abdulrafayportfolio.vercel.app/'
 							target='_blank'>
-							<Image src='https://abdulrafayportfolio.vercel.app/static/media/footer-logo.0723028e116b4f67fdcc.png' width={40} height={40} alt='Rafay Dev'></Image>
+							<Image
+								src='https://abdulrafayportfolio.vercel.app/static/media/footer-logo.0723028e116b4f67fdcc.png'
+								width={40}
+								height={40}
+								alt='Rafay Dev'></Image>
 						</Link>
 					</p>
 				</Container>

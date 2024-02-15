@@ -112,6 +112,12 @@ h3.logo::before {
 
 }
 
+@media only screen and (max-width: 400px) {
+  h3.logo{
+    font-size: 16px;
+  }
+}
+
 @keyframes animate {
 
   0%,

@@ -22,7 +22,7 @@ const Avatar: React.FC<AvatarProps> = ({ src, color }) => {
 		<ImUser
 			size={50}
 			color={color}
-			className='p-[7px] pt-[3px]'
+			className='p-[7px] pt-[3px] '
 		/>
 	);
 };

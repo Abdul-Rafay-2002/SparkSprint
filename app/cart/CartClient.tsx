@@ -44,8 +44,8 @@ const CartClient: React.FC<CartClientProps> = ({ currentUser }) => {
 
 	return (
 		<div>
-			<Heading title='Shopping Cart' center />
-			<div className='grid grid-cols-5 text-sm gap-4 pb-2 items-center mt-12'>
+			<Heading title='Shopping Cart' center customColor='mb-20' />
+			<div className=' hidden sm:grid grid-cols-5  text-sm gap-4 pb-2 items-center mt-12'>
 				<div className='uppercase font-bold col-span-2 justify-self-start text-white'>
 					Product
 				</div>
@@ -59,12 +59,12 @@ const CartClient: React.FC<CartClientProps> = ({ currentUser }) => {
 					Total
 				</div>
 			</div>
-			<div>
+			
 				{cartProducts &&
 					cartProducts.map((item) => {
 						return <ItemContent key={item.id} item={item} />;
 					})}
-			</div>
+			
 			<div className='border-t-2 border-green-500/20  py-2 flex justify-between gap-4 items-end flex-col'>
 				<div>
 					<Button
