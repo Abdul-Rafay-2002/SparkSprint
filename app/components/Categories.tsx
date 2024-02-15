@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { categories } from '@/utils/Categories';
 import Container from './Container';
 import Category from './Category';
@@ -9,12 +9,13 @@ interface CategoriesProps {}
 const Categories: React.FC<CategoriesProps> = () => {
 	const params = useSearchParams();
 	const category = params?.get('category');
-    const pathName = usePathname();
-    const isMainPage = pathName === '/products';
+	const pathName = usePathname();
+	const isMainPage = pathName === '/';
+	const isProductPage = pathName === '/products';
 	// const isProductPage = (pathName?.startsWith('/products'));
-    if(!isMainPage ){
-        return null
-    }
+	if (!isMainPage && !isProductPage) {
+		return null;
+	}
 
 	return (
 		<div className=''>
