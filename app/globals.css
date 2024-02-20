@@ -113,7 +113,7 @@ h3.logo::before {
 }
 
 @media only screen and (max-width: 400px) {
-  h3.logo{
+  h3.logo {
     font-size: 16px;
   }
 }
@@ -299,4 +299,48 @@ h3.logo::before {
 
 .customScollbar::-webkit-scrollbar {
   width: 12px;
+}
+
+.accordion .panel {
+  margin-bottom: 10px;
+}
+
+button.panel__head {
+  background: rgb(37, 67, 80);
+  background: linear-gradient(290deg, rgba(37, 67, 80, 1) 32%, rgba(15, 45, 58, 1) 64%, rgba(0, 30, 43, 1) 93%);
+  background-blend-mode: overlay, normal;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.panel[aria-expanded="false"] .panel__head {
+  border-radius: 10px;
+}
+
+.panel__content {
+  color: black;
+  padding: 20px;
+  background: #bbf7d0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.panel[aria-expanded="false"] .panel__content {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.panel__content ol {
+  padding-left: 18px;
+}
+
+.panel__content ol li {
+  list-style: auto;
+  margin-bottom: 10px;
 }
