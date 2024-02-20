@@ -5,7 +5,7 @@ export const faqs = [
     },
     {
         title: 'What are the main features of Sparksprint?',
-        content: 'Sparksprint offers a wide range of features to enhance your digital shopping, including sucurely create an account, purshaed, view orders tools. Explore our platform to discover how Sparksprint can streamline your purchasing processes.',
+        content: 'Sparksprint offers a wide range of features to enhance your digital shopping, including securely create an account, purchased, view orders tools. Explore our platform to discover how Sparksprint can streamline your purchasing processes.',
         open: true
     },
     {

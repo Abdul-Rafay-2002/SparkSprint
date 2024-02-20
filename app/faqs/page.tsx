@@ -5,13 +5,13 @@ import SubpageTemplate from '../components/SubpageTemplate';
 import { Accordion } from 'react-accordion-ts';
 import 'react-accordion-ts/src/panel.css';
 
-interface AccordianProps {
+interface AccordionProps {
 	duration: number;
 	open?: number;
 	multiple: boolean;
 }
 
-const FAQS: React.FC<AccordianProps> = ({ duration, multiple, open }) => {
+const FAQS: React.FC<AccordionProps> = ({ duration, multiple, open }) => {
 	function renderContent(content: any) {
 		// Check if the content has HTML tags
 		if (/<[^>]*>/i.test(content)) {
