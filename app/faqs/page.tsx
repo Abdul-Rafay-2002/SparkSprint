@@ -1,41 +1,41 @@
-'use client';
-
-import { faqs } from '@/utils/Faqs';
+'use client'
+import React from 'react'; // Add explicit import for React
+import { faqs as importedFAQs } from '@/utils/Faqs'; // Use a more descriptive alias
 import SubpageTemplate from '../components/SubpageTemplate';
-import { Accordion } from 'react-accordion-ts';
+import { AccordionProps } from 'react-accordion-ts';
+import { Accordion } from 'react-accordion-ts'; // Import AccordionProps directly
 import 'react-accordion-ts/src/panel.css';
 
-interface AccordionProps {
-	duration: number;
-	open?: number;
-	multiple: boolean;
-}
+const FAQS: React.FC<AccordionProps> = ({
+	duration = 400,
+	multiple = false,
+	open,
+}) => {
+	const renderContent = (content: string) => {
+		// Specify content type as string
+		// Use a dedicated regex variable for clarity
+		const hasHTMLTags = /<[^>]*>/i.test(content);
 
-const FAQS: React.FC<AccordionProps> = ({ duration, multiple, open }) => {
-	function renderContent(content: any) {
-		// Check if the content has HTML tags
-		if (/<[^>]*>/i.test(content)) {
-			return <div dangerouslySetInnerHTML={{ __html: content }} />;
-		} else {
-			return <span>{content}</span>;
-		}
-	}
+		return hasHTMLTags ? (
+			<div dangerouslySetInnerHTML={{ __html: content }} />
+		) : (
+			<span>{content}</span>
+		);
+	};
 
-	// Render FAQs with HTML content conditionally
-	const faqsWithRenderedContent = faqs.map((faq) => ({
+	const faqsWithRenderedContent = importedFAQs.map((faq) => ({
 		...faq,
 		content: renderContent(faq.content),
 	}));
-
 
 	return (
 		<SubpageTemplate
 			pageTitle='Frequently Asked Questions'
 			pageDescription='Find answers to commonly asked questions about Sparksprint'>
-			<div className='max-w-[1020px] mx-auto py-20 w-full '>
+			<div className='container mx-auto !py-20'>
 				<Accordion
-					duration={400}
-					multiple={false}
+					duration={duration}
+					multiple={multiple}
 					items={faqsWithRenderedContent}
 					open={open}
 				/>

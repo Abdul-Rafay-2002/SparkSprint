@@ -344,3 +344,6 @@ button.panel__head {
   list-style: auto;
   margin-bottom: 10px;
 }
+.panel__content p {
+  margin-bottom: 20px;
+}
