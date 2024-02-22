@@ -1,26 +1,31 @@
-'use client';
+// Import React
+import React from 'react';
 
-import { faqs as importedFAQs } from '@/utils/Faqs'; // Use a more descriptive alias
+// Use a more descriptive alias for faqs
+import { faqs as importedFAQs } from '@/utils/Faqs';
+
 import SubpageTemplate from '../components/SubpageTemplate';
-import { Accordion } from 'react-accordion-ts'; // Import AccordionProps directly
+
+// Import Accordion component and its styles
+import { Accordion } from 'react-accordion-ts';
 import 'react-accordion-ts/src/panel.css';
 
-interface AccordionProps {
-	duration: number;
-	multiple: boolean;
-	open: number | undefined;
+// Define props interface
+interface FAQSProps {
+	duration?: number;
+	multiple?: boolean;
+	open?: number | undefined;
 }
 
-const FAQS: React.FC<AccordionProps> = ({
+// Define component
+const FAQS: React.FC<FAQSProps> = ({
 	duration = 400,
 	multiple = false,
 	open,
 }) => {
+	// Function to render content based on whether it's HTML or not
 	const renderContent = (content: string) => {
-		// Specify content type as string
-		// Use a dedicated regex variable for clarity
 		const hasHTMLTags = /<[^>]*>/i.test(content);
-
 		return hasHTMLTags ? (
 			<div dangerouslySetInnerHTML={{ __html: content }} />
 		) : (
@@ -28,11 +33,13 @@ const FAQS: React.FC<AccordionProps> = ({
 		);
 	};
 
+	// Render faqs with rendered content
 	const faqsWithRenderedContent = importedFAQs.map((faq) => ({
 		...faq,
 		content: renderContent(faq.content),
 	}));
 
+	// Return component
 	return (
 		<SubpageTemplate
 			pageTitle='Frequently Asked Questions'
@@ -49,4 +56,5 @@ const FAQS: React.FC<AccordionProps> = ({
 	);
 };
 
+// Export component
 export default FAQS;
