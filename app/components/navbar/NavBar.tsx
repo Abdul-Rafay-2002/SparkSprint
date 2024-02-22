@@ -6,6 +6,7 @@ import UserMenu from './UserMenu';
 import { getCurrentUser } from '@/actions/getCurrentUser';
 import SearchBar from '../SearchBar';
 import MobileMenu from './MobileMenu';
+import Link from 'next/link';
 
 const NavBar = async () => {
 	const currentUser = await getCurrentUser();
@@ -25,31 +26,22 @@ const NavBar = async () => {
 						<div className='max-[1440px]:hidden'>
 							<ul className='flex justify-between gap-6'>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									All
+									<Link href={'/'}>Home</Link>
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									Phones
+									<Link href={'/Products'}>Products</Link>
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									Headphones
+									<Link href={'/faqs'}>FAQ</Link>
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									LCDs & TVs
+									<Link href={'/return-exchange'}>Return & Exchange</Link>
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									Speakers
+									<Link href={'/shipping-policy'}>Shipping Policy</Link>
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									PCs & Desktops
-								</li>
-								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									Laptops
-								</li>
-								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									Watches
-								</li>
-								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									Accessories
+									<Link href={'/contact-us'}>Contact Us</Link>
 								</li>
 							</ul>
 						</div>

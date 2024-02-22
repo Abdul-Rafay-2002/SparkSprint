@@ -53,7 +53,7 @@ const Footer = () => {
 							href='/products?category=Watches'>
 							Watches
 						</Link>
-						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='#'>
+						<Link className=' text-slate-300/50 hover:text-[#00ED64]' href='/faqs/'>
 							FAQs
 						</Link>
 					</FooterList>

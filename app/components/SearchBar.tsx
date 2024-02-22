@@ -46,10 +46,10 @@ const SearchBar = () => {
 			/>
 
 			{isSearchBarVisible && (
-				<div className='flex items-center absolute right-0 top-20 '>
+				<div className='flex items-center absolute  max-[500px]:left-0 right-0 top-20 '>
 					<input
 						{...register('searchTerm')}
-						className='p-2 border-2 text-slate-900  w-[400px] outline-none  border-[#00ED64] rounded-md'
+						className='p-2 border-2 text-slate-900   w-[400px] outline-none  border-[#00ED64] rounded-md'
 						autoComplete='off'
 						type='text'
 						placeholder='Explore SparkSprint products..'

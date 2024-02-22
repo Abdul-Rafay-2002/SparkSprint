@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { RxHamburgerMenu } from 'react-icons/rx';
@@ -25,34 +26,25 @@ const MobileMenu = () => {
 			)}
 
 			{toggle && (
-				<div className='fixed top-20 max-[500px]:top-16 left-0 w-full min-h-screen bg-gray-900  flex flex-col justify-center items-center'>
+				<div className='fixed top-20 max-[500px]:top-16 left-0 w-full min-h-screen bg-gray-900 py-40  flex flex-col justify-start items-center'>
 					<ul className='flex justify-start flex-col  w-full h-full'>
 						<li className='text-base hover:bg-[#00ED64] py-3 px-6 hover:text-black hover:transition-colors font-semibold'>
-							All
+							<Link href={'/'}>Home</Link>
 						</li>
-						<li className='text-base hover:bg-[#00ED64] hover:text-black py-3 px-6 hover:transition-colors font-semibold'>
-							Phones
+						<li className='text-base hover:bg-[#00ED64] py-3 px-6 hover:text-black hover:transition-colors font-semibold'>
+							<Link href={'/Products'}>Products</Link>
 						</li>
-						<li className='text-base hover:bg-[#00ED64] hover:text-black py-3 px-6 hover:transition-colors font-semibold'>
-							Headphones
+						<li className='text-base hover:bg-[#00ED64] py-3 px-6 hover:text-black hover:transition-colors font-semibold'>
+							<Link href={'/faqs'}>FAQ</Link>
 						</li>
-						<li className='text-base hover:bg-[#00ED64] hover:text-black py-3 px-6 hover:transition-colors font-semibold'>
-							LCDs & TVs
+						<li className='text-base hover:bg-[#00ED64] py-3 px-6 hover:text-black hover:transition-colors font-semibold'>
+							<Link href={'/return-exchange'}>Return & Exchange</Link>
 						</li>
-						<li className='text-base hover:bg-[#00ED64] hover:text-black py-3 px-6 hover:transition-colors font-semibold'>
-							Speakers
+						<li className='text-base hover:bg-[#00ED64] py-3 px-6 hover:text-black hover:transition-colors font-semibold'>
+							<Link href={'/shipping-policy'}>Shipping Policy</Link>
 						</li>
-						<li className='text-base hover:bg-[#00ED64] hover:text-black py-3 px-6 hover:transition-colors font-semibold'>
-							PCs & Desktops
-						</li>
-						<li className='text-base hover:bg-[#00ED64] hover:text-black py-3 px-6 hover:transition-colors font-semibold'>
-							Laptops
-						</li>
-						<li className='text-base hover:bg-[#00ED64] hover:text-black py-3 px-6 hover:transition-colors font-semibold'>
-							Watches
-						</li>
-						<li className='text-base hover:bg-[#00ED64] hover:text-black py-3 px-6 hover:transition-colors font-semibold'>
-							Accessories
+						<li className='text-base hover:bg-[#00ED64] py-3 px-6 hover:text-black hover:transition-colors font-semibold'>
+							<Link href={'/contact-us'}>Contact Us</Link>
 						</li>
 					</ul>
 				</div>

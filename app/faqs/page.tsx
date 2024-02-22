@@ -1,5 +1,5 @@
-'use client'
-import React from 'react'; // Add explicit import for React
+'use client';
+
 import { faqs as importedFAQs } from '@/utils/Faqs'; // Use a more descriptive alias
 import SubpageTemplate from '../components/SubpageTemplate';
 import { AccordionProps } from 'react-accordion-ts';
