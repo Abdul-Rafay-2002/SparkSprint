@@ -10,19 +10,8 @@ import SubpageTemplate from '../components/SubpageTemplate';
 import { Accordion } from 'react-accordion-ts';
 import 'react-accordion-ts/src/panel.css';
 
-// Define props interface
-interface FAQSProps {
-	duration?: number;
-	multiple?: boolean;
-	open?: number | undefined;
-}
-
 // Define component
-const FAQS: React.FC<FAQSProps> = ({
-	duration = 400,
-	multiple = false,
-	open,
-}) => {
+const FAQS = () => {
 	// Function to render content based on whether it's HTML or not
 	const renderContent = (content: string) => {
 		const hasHTMLTags = /<[^>]*>/i.test(content);
@@ -46,10 +35,10 @@ const FAQS: React.FC<FAQSProps> = ({
 			pageDescription='Find answers to commonly asked questions about Sparksprint'>
 			<div className='container mx-auto !py-20'>
 				<Accordion
-					duration={duration}
-					multiple={multiple}
+					duration={400}
+					multiple={false}
 					items={faqsWithRenderedContent}
-					open={open}
+					
 				/>
 			</div>
 		</SubpageTemplate>
