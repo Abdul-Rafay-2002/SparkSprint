@@ -2,9 +2,14 @@
 
 import { faqs as importedFAQs } from '@/utils/Faqs'; // Use a more descriptive alias
 import SubpageTemplate from '../components/SubpageTemplate';
-import { AccordionProps } from 'react-accordion-ts';
 import { Accordion } from 'react-accordion-ts'; // Import AccordionProps directly
 import 'react-accordion-ts/src/panel.css';
+
+interface AccordionProps {
+	duration: number;
+	multiple: boolean;
+	open: number | undefined;
+}
 
 const FAQS: React.FC<AccordionProps> = ({
 	duration = 400,
