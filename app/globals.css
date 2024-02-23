@@ -354,3 +354,35 @@ button.panel__head {
 .panel__content p {
   margin-bottom: 20px;
 }
+
+.slick-slider .slick-prev {
+  border-radius: 100px 0 0px 100px;
+}
+
+.slick-slider .slick-next {
+  border-radius: 0px 100px 100px 0px;
+}
+
+.slick-slider .slick-prev,
+.slick-slider .slick-next {
+  background-color: #001e2b;
+  width: 40px;
+  height: 58px;
+  z-index: 4;
+}
+.slick-slider{
+  background-color: #bbf7d0;
+  border: 2px solid #00ed63;
+  padding: 5px 0;
+}
+.slick-slider .slick-prev:hover,
+.slick-slider .slick-prev:focus,
+.slick-slider .slick-next:hover,
+.slick-slider .slick-next:focus {
+  background: #001e2b;
+}
+
+.slick-slider .slick-prev::before,
+.slick-slider .slick-next::before {
+  color: #fff;
+}

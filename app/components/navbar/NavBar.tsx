@@ -29,7 +29,7 @@ const NavBar = async () => {
 									<Link href={'/'}>Home</Link>
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
-									<Link href={'/Products'}>Products</Link>
+									<Link href={'/products'}>Products</Link>
 								</li>
 								<li className='text-base hover:text-green-500 hover:transition-colors font-semibold'>
 									<Link href={'/faqs'}>FAQ</Link>

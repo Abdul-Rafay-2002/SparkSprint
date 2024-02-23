@@ -1,13 +1,9 @@
 'use client'
-
 // Import React
 import React from 'react';
-
 // Use a more descriptive alias for faqs
 import { faqs as importedFAQs } from '@/utils/Faqs';
-
 import SubpageTemplate from '../components/SubpageTemplate';
-
 // Import Accordion component and its styles
 import { Accordion } from 'react-accordion-ts';
 import 'react-accordion-ts/src/panel.css';
