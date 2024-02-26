@@ -18,7 +18,7 @@ const AdminNav = () => {
 	};
 	return (
 		<div className='w-full top-20 border-1 py-3'>
-			<div>
+			<div className=' flex lg:block flex-col sm:flex-row gap-2 flex-1'>
 				<Link href='/admin'>
 					<AdminNavItem
 						label='Dashboard'

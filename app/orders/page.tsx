@@ -14,7 +14,7 @@ const Orders = async () => {
 		return <NullData title='No Order Yet!' />;
 	}
 	return (
-		<div className='w-full bg-[#061621] py-10'>
+		<div className='w-full bg-[#061621] py-10 px-4'>
 			<div className='max-w-[1380px] mx-auto'>
 				<OrderClient orders={orders} />
 			</div>

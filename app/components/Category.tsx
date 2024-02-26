@@ -38,9 +38,9 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
 			onClick={handleClick}
 			className={`${
 				selected
-					? 'text-black border-black bg-[#00ED64] hover:text-slate-900'
-					: 'border-transparent  text-black  hover:border-black hover:bg-[#00ED64] hover:text-black'
-			} flex items-center mx-4 md:2 sm:mx-2 max-[768px]:w-[48%] max-[500px]:w-[100%] max-[500px]:justify-start justify-center max-[500px]:rounded-md gap-1 border-2 py-2 px-4 rounded-full transition-colors cursor-pointer`}>
+					? 'text-black  bg-[#00ED64] border-[#00ED64] hover:text-slate-900'
+					: 'border-transparent border-[#00ED64]  text-black  hover:bg-[#00ED64] hover:text-black'
+			} flex items-center mx-4 md:2 sm:mx-2 max-[768px]:w-[48%] max-[500px]:w-[100%] max-[500px]:justify-start justify-center gap-1 border-2 py-2 px-4 rounded-md transition-colors cursor-pointer`}>
 			<Icon size={20} />
 			<h4 className=''>{label}</h4>
 		</div>

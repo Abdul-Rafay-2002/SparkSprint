@@ -24,12 +24,14 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
 		<div>
 			<Heading
 				title={`Order : ${order.id}`}
-				customColor='text-white text-black !mb-0'
+				customColor='text-white text-black !mb-0 text-[1.3rem] sm:text-3xl'
 			/>
-			<p className='text-slate-500'>{moment(order.createdDate).calendar()}</p>
+			<p className='text-slate-500 text-[.8rem] sm:text-md'>
+				{moment(order.createdDate).calendar()}
+			</p>
 
-			<div className='flex items-start gap-4 mb-12 mt-8'>
-				<div className='bg-[#ffffff1a] p-3 rounded-full'>
+			<div className='flex flex-col sm:flex-row items-start gap-4 mb-12 mt-8'>
+				<div className='bg-[#ffffff1a] p-3  rounded-full'>
 					<ImBoxAdd size={26} />
 				</div>
 				<div className='w-full'>
@@ -97,13 +99,13 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
 					</div>
 				</div>
 			</div>
-			<div className='flex items-start gap-4 mt-8 w-full'>
+			<div className='flex  flex-col sm:flex-row items-start gap-4 mt-8 w-full'>
 				<div className='bg-[#ffffff1a] p-3 rounded-full'>
 					<FaBagShopping size={26} />
 				</div>
 				<div className='w-full max-w-[1180px]'>
 					<h3 className='mb-4 w-full text-white mt-1'>Ordered Products </h3>
-					<div className='grid grid-cols-5 text-sm gap-4 pb-2 items-center border-b-2 border-slate-500'>
+					<div className='hidden sm:grid grid-cols-5 text-sm gap-4 pb-2 items-center border-b-2 border-slate-500'>
 						<div className='col-span-2 justify-self-start font-bold text-slate-400 '>
 							PRODUCT
 						</div>

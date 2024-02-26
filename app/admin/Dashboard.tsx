@@ -82,7 +82,7 @@ const Dashboard: React.FC<DashboardProps> = ({ orders, products, users }) => {
 					customColor='text-white text-black uppercase underline decoration-[#00ED64] underline-offset-8 mb-8'
 				/>
 			</div>
-			<div className='grid grid-cols-6 gap-3 max-h-50vh overflow-y-auto'>
+			<div className='grid max-[510px]:grid-cols-2 grid-cols-3 lg:grid-cols-6 gap-3 max-h-50vh overflow-y-auto'>
 				{dataKeys &&
 					dataKeys.map((key) => (
 						<div

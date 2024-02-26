@@ -370,7 +370,7 @@ button.panel__head {
   height: 58px;
   z-index: 4;
 }
-.slick-slider{
+.categories .slick-slider{
   background-color: #bbf7d0;
   border: 2px solid #00ed63;
   padding: 5px 0;

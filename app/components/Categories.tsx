@@ -65,7 +65,7 @@ const Categories = () => {
 	}
 
 	return (
-		<div className='flex justify-center items-center gap-2 max-[768px]:justify-start  flex-wrap'>
+		<div className='categories flex justify-center items-center gap-2 max-[768px]:justify-start  flex-wrap'>
 			<Slider {...settings} className='lg:w-[100%] w-[100%] h-full'>
 				{categories.map((item) => (
 					<Category

@@ -15,6 +15,7 @@ interface SettingsProps {
 	slidesToShow: number;
 	arrows: boolean;
 	autoplay: boolean;
+	draggable: boolean;
 	autoplaySpeed: number;
 	slidesToScroll: number;
 }
@@ -28,6 +29,7 @@ const CallToAction = () => {
 		arrows: false,
 		speed: 1000,
 		slidesToShow: 1,
+		draggable: false,
 		slidesToScroll: 1,
 	};
 

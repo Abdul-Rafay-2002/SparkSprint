@@ -12,8 +12,8 @@ interface OrderItemProps {
 
 const OrderItem: React.FC<OrderItemProps> = ({ product }) => {
 	return (
-		<div className='grid grid-cols-5 text-xs md:text-sm gap-4 border-b-2 border-slate-500 py-4 items-center'>
-			<div className='flex items-center col-span-2 gap-3'>
+		<div className='grid grid-cols-1 grid-rows-1 sm:gird-rows-1 sm:grid-cols-5 text-xs md:text-sm gap-4 border-b-2 border-slate-500 py-4 items-center'>
+			<div className='flex flex-col sm:flex-row  items-start sm:items-center col-span-1  sm:col-span-2 gap-3'>
 				<div className='bg-[#2945506b] p-2 py-4 w-20 h-22 rounded'>
 					<Link href={`/product/${product.id}`}>
 						<Image
@@ -39,13 +39,13 @@ const OrderItem: React.FC<OrderItemProps> = ({ product }) => {
 					</span>
 				</div>
 			</div>
-			<div className='col-span-1 justify-self-center'>
+			<div className='col-span-1  sm:col-span-1  justify-self-start sm:justify-self-center'>
 				<p className='text-sm'>{formatPrice(product.price)}</p>
 			</div>
-			<div className='col-span-1 justify-self-center font-bold text-[#00ED64]'>
+			<div className='col-span-1  sm:col-span-1  justify-self-start sm:justify-self-center font-bold text-[#00ED64]'>
 				{product.quantity}
 			</div>
-			<div className='col-span-1 justify-self-end font-bold text-[#00ED64]'>
+			<div className='col-span-1  sm:col-span-1  justify-self-start sm:justify-self-end font-bold text-[#00ED64]'>
 				{formatPrice(product.price * product.quantity)}
 			</div>
 		</div>
