@@ -67,7 +67,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
 				customColor='text-[#001e2b] font-extrabold text-3xl uppercase mt-4'
 				center
 			/>
-			<p className=' text-gray-800 -my-5 '>
+			<p className=' text-center text-gray-800 -my-5 '>
 				Please login to purchased the products!
 			</p>
 			<Button
